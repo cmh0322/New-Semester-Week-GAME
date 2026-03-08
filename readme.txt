@@ -1,59 +1,58 @@
-# 제목 없음
+# 🎸 Rhythm Game Execution Guide
 
-# 🎸 리듬 게임 실행 가이드 (Rhythm Game Execution Guide)
-
-이 프로젝트는 **Processing(프로세싱)** 환경에서 제작된 아두이노 연동 리듬 게임입니다. 다른 환경에서 게임을 실행하려면 아래 단계를 차례대로 따라주세요.
+This project is a rhythm game built using the **Processing** environment and integrated with **Arduino**. To run this project on another PC, please follow the steps below.
 
 ---
 
-## 🛠 1. 필수 환경 설정
+## 🛠 1. Prerequisites & Environment Setup
 
-### Processing IDE 설치
+### Install Processing IDE
 
-- [processing.org](https://processing.org/download/)에서 본인의 운영체제(Windows/macOS/Linux)에 맞는 버전을 설치하세요.
+- Download and install the version compatible with your OS from [processing.org](https://www.google.com/search?q=https://processing.org/download/).
 
-### 라이브러리 설치
+### Install Libraries
 
-이 코드는 외부 사운드 라이브러리를 사용합니다. 실행 전 반드시 아래 라이브러리를 설치해야 합니다.
+This project requires an external sound library. Follow these steps to install it:
 
-1. Processing 실행 후 메뉴에서 **[Sketch]** -> **[Import Library...]** -> **[Manage Libraries...]** 선택
-2. 검색창에 **Minim** 입력 후 설치 (작성자: `ddf.minim`)
-3. *참고: Serial 라이브러리는 기본 내장되어 있으나, 혹시 작동하지 않는다면 동일한 방식으로 설치하세요.*
+1. Open Processing and go to **[Sketch]** -> **[Import Library...]** -> **[Manage Libraries...]**.
+2. Search for **Minim** and click **Install** (Author: `ddf.minim`).
+3. *Note: The Serial library is built-in, but if it's missing, install it using the same method.*
 
 ---
 
-## 🔌 2. 아두이노 연결
+## 🔌 2. Arduino Connection
 
-1. 아두이노를 컴퓨터의 USB 포트에 연결합니다.
-2. 게임을 실행하여 아두이노가 정상 작동하면 그대로 사용하시면 됩니다.
-3. 만약 작동하지 않는다면, 프로젝트 폴더 내의 `.ino` 파일을 아두이노 IDE로 열어 **업로드(Upload)**를 진행해 주세요.
+1. Connect your Arduino board to the computer.
+2. Run the game. If the Arduino operates normally, you are good to go.
+3. If the Arduino does not respond, open the `.ino` file in the project folder and **Upload** it using the Arduino IDE.
 
 > [!CAUTION]
-**주의 (Serial Port Conflict)** > Processing과 아두이노 IDE는 동일한 **Serial Port**를 공유합니다. 두 프로그램이 동시에 켜져 있으면 한쪽이 작동하지 않으니, 아두이노 업로드가 끝났다면 반드시 **아두이노 IDE를 종료**한 뒤 Processing을 실행해 주세요.
+**Warning (Serial Port Conflict)**
+Since Processing and the Arduino IDE share the same **Serial Port**, they cannot function simultaneously. Please **close the Arduino IDE** after uploading the code before running the Processing sketch.
 > 
 
 ---
 
-## 🚀 3. 게임 실행 방법
+## 🚀 3. How to Run
 
-1. Processing IDE에서 해당 프로젝트 파일을 엽니다.
-2. 왼쪽 상단의 **플레이 버튼(▶)**을 눌러 프로그램을 실행합니다.
-3. 실행된 창을 손님용 모니터로 옮긴 후, **전체 화면**으로 설정하여 플레이하세요.
+1. Open the project file in the Processing IDE.
+2. Click the **Play (▶)** button in the top-left corner to start the program.
+3. Move the application window to the guest monitor and set it to **Full Screen**.
 
 ---
 
-## 📋 문제 해결 (Troubleshooting)
+## 📋 Troubleshooting
 
-### 🖥 화면 크기 조절
+### 🖥 Adjusting Screen Size
 
-화면이 너무 크거나 작게 출력된다면 코드 상단의 `size()` 함수를 수정하세요.
+If the window size is too large or small for your monitor, modify the `size()` function at the top of the code:
 
 Java
 
-`// 예: 모니터 해상도에 맞게 숫자 수정
+`// Example: Adjust numbers to match your monitor's resolution
 size(1600, 900);`
 
-### ⚠️ 소리가 나지 않아요
+### ⚠️ No Sound
 
-- `Minim` 라이브러리가 정상적으로 설치되었는지 다시 확인해 주세요.
-- 스피커나 이어폰의 연결 상태 및 시스템 볼륨을 확인해 주세요.
+- Ensure the `Minim` library is correctly installed.
+- Check your speaker/headphone connection and system volume levels.
