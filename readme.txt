@@ -1,91 +1,57 @@
 # 🎸 Rhythm Game Execution Guide
 
-This project is a **rhythm game built using the Processing environment and integrated with Arduino**.
-To run this project on another PC, follow the steps below.
+This project is a rhythm game built using the **Processing** environment and integrated with **Arduino**. To run this project on another PC, please follow the steps below.
 
 ---
 
-# 🛠 1. Prerequisites & Environment Setup
+## 🛠 1. Prerequisites & Environment Setup
 
-## Install Processing IDE
+### Install Processing IDE
 
-Download and install the version compatible with your operating system from:
+- Download and install the version compatible with your OS from [processing.org](https://www.google.com/search?q=https://processing.org/download/).
 
-https://processing.org
+### Install Libraries
 
----
+This project requires an external sound library. Follow these steps to install it:
 
-## Install Required Libraries
-
-This project requires an external sound library.
-
-1. Open **Processing IDE**
-2. Go to
-   **Sketch → Import Library → Manage Libraries...**
-3. Search for **Minim**
-4. Click **Install**
-
-**Library Information**
-
-* Library Name: `Minim`
-* Author: `ddf.minim`
-
-> Note
-> The **Serial library is built-in** in Processing.
-> If it is missing, install it using the same method.
+1. Open Processing and go to **[Sketch]** -> **[Import Library...]** -> **[Manage Libraries...]**.
+2. Search for **Minim** and click **Install** (Author: `ddf.minim`).
+3. *Note: The Serial library is built-in, but if it's missing, install it using the same method.*
 
 ---
 
-# 🔌 2. Arduino Connection
+## 🔌 2. Arduino Connection
 
-1. Connect your **Arduino board** to the computer.
-2. Run the game.
+1. Connect your Arduino board to the computer.
+2. Run the game. If the Arduino operates normally, you are good to go.
+3. If the Arduino does not respond, open the `.ino` file in the project folder and **Upload** it using the Arduino IDE.
 
-If the Arduino operates normally, you are ready to play.
-
-If the Arduino does **not respond**:
-
-1. Open the `.ino` file inside the project folder.
-2. Upload it using the **Arduino IDE**.
-
----
-
-## ⚠ Serial Port Conflict Warning
-
-Processing and the Arduino IDE **cannot use the same Serial Port simultaneously**.
-
-After uploading the code:
-
-**Close the Arduino IDE before running the Processing sketch.**
+> [!CAUTION]
+**Warning (Serial Port Conflict)**
+Since Processing and the Arduino IDE share the same **Serial Port**, they cannot function simultaneously. Please **close the Arduino IDE** after uploading the code before running the Processing sketch.
+> 
 
 ---
 
-# 🚀 3. How to Run
+## 🚀 3. How to Run
 
-1. Open the project file in the **Processing IDE**
-2. Click the **Play (▶) button** in the top-left corner
-3. Move the application window to the **guest monitor**
-4. Set the window to **Full Screen**
-
----
-
-# 📋 Troubleshooting
-
-## 🖥 Adjusting Screen Size
-
-If the window size does not match your monitor, modify the `size()` function at the top of the code.
-
-```java
-// Example: Adjust numbers to match your monitor resolution
-size(1600, 900);
-```
+1. Open the project file in the Processing IDE.
+2. Click the **Play (▶)** button in the top-left corner to start the program.
+3. Move the application window to the guest monitor and set it to **Full Screen**.
 
 ---
 
-## ⚠ No Sound
+## 📋 Troubleshooting
 
-If sound is not playing:
+### 🖥 Adjusting Screen Size
 
-* Ensure the **Minim library** is correctly installed
-* Check your **speaker/headphone connection**
-* Verify the **system volume level**
+If the window size is too large or small for your monitor, modify the `size()` function at the top of the code:
+
+Java
+
+`Example: Adjust numbers to match your monitor's resolution size(1600, 900);`
+
+### ⚠️ No Sound
+
+- Ensure the `Minim` library is correctly installed.
+- Check your speaker/headphone connection and system volume levels.
